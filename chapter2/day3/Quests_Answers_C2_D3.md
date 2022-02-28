@@ -36,4 +36,4 @@ var unwrappedNumber2: Int = number2! // This returns an error because we are try
       return thing[0x03]! // added the force-unwrap operator
     }
     ```
- <img src="../chapter2/images/wrongcode.png" alt="drawing" size="400" />
+ <img src="../images/wrongcode.png" alt="drawing" size="400" />
