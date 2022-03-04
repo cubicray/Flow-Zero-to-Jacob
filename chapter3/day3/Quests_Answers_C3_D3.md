@@ -49,4 +49,4 @@ pub fun main() {
 > Playground Link: https://play.onflow.org/3a6efa24-fb25-4e40-b930-1a54b5b5f216
 
 3. Explain, in your own words, why references can be useful in Cadence.
-> With references it is easier to deal with resources. Without references we would need to move resources around a lot.
+> With references it is easier to interact with resources. Without references we would need to move resources around a lot.
