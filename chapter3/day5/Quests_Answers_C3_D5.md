@@ -32,9 +32,16 @@ access(all) contract SomeContract {
 
 
         pub fun structFunc() {
-            /**************/
-            /*** AREA 1 ***/
-            /**************/
+          /**************/
+          /*** AREA 1 ***/
+          /**************/
+          // a: read/write
+          // b: read/write
+          // c: read/write
+          // d: read/write
+          // publicFunc(): can be called
+          // contractFunc(): can be called
+          // privateFunc(): can be called
         }
 
         init() {
@@ -49,9 +56,16 @@ access(all) contract SomeContract {
         pub var e: Int
 
         pub fun resourceFunc() {
-            /**************/
-            /*** AREA 2 ***/
-            /**************/
+          /**************/
+          /*** AREA 2 ***/
+          /**************/
+          // a: read/write
+          // b: read
+          // c: read
+          // d: ACCESS DENIED
+          // publicFunc(): can be called
+          // contractFunc(): can be called
+          // privateFunc(): ACCESS DENIED
         }
 
         init() {
@@ -64,9 +78,16 @@ access(all) contract SomeContract {
     }
 
     pub fun questsAreFun() {
-        /**************/
-        /*** AREA 3 ****/
-        /**************/
+      /**************/
+      /*** AREA 3 ****/
+      /**************/
+      // a: read/write
+      // b: read
+      // c: read
+      // d: ACCESS DENIED
+      // publicFunc(): can be called
+      // contractFunc(): can be called
+      // privateFunc(): ACCESS DENIED
     }
 
     init() {
@@ -83,5 +104,12 @@ pub fun main() {
   /**************/
   /*** AREA 4 ***/
   /**************/
+  // a: read (read only in scripts, but read/write in transactions)
+  // b: read
+  // c: ACCESS DENIED
+  // d: ACCESS DENIED
+  // publicFunc(): can be called
+  // contractFunc(): ACCESS DENIED
+  // privateFunc(): ACCESS DENIED
 }
 ```5
