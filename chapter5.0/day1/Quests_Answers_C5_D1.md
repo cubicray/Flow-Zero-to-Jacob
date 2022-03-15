@@ -5,15 +5,40 @@
 >Events declared in a smart contract's body allow us to notify and broadcast data to the blockchain when something happens. We trigger the event with an `emit` statement when the contract is executed. Clients listening to our contract can then react to the event by updating their code. For example, a client could update a counter on their website each time an NFT is minted.
 
 2. Deploy a contract with an event in it, and emit the event somewhere else in the contract indicating that it happened.
-
-```swift
-answer
-```
-
 3. Using the contract in step 2), add some pre conditions and post conditions to your contract to get used to writing them out.
 
 ```swift
-answer
+pub contract MyContract {
+
+  pub var project: String
+
+  // declare event
+  pub event checkedProject(name: String)
+ 
+  pub fun checkProject(name: String): String {
+    // pre-condition
+    pre {
+      name.length == 8: "Hint: the project name is 8 characters long"
+    }
+
+    // post-condition
+    post {
+      self.project == before(self.project): "You entered the wrong NFT project."
+    }
+   
+    self.project = name
+   
+    // emit event
+    emit checkedProject(name: self.project)
+   
+    return self.project
+  }
+
+  init() {
+    self.project = "Hoodlums"
+  }
+
+}
 ```
 
 4. For each of the functions below (numberOne, numberTwo, numberThree), follow the instructions.
