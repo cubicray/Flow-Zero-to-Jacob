@@ -42,7 +42,7 @@ pub contract Test: ITest { // implement the contract interface
   pub var number: Int
   
   pub fun updateNumber(newNumber: Int) {
-    self.number = 5
+    self.number = newNumber //satisfy post condition
   }
   
   // No need for this resource interface here (it stays in the contract interface).
